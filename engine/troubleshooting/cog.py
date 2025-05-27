@@ -118,6 +118,10 @@ class Troubleshooting(commands.Cog):
                         f"содержащий гайды из категории *«{config.TROUBLESHOOTING_GROUPS[group]['name']}»*.\n"
                         f"Можно использовать его для редактирования имеющихся вопросов и добавления новых."))
 
+    @commands.Cog.listener()
+    async def on_ready(self):
+        self.client.add_view(views.MainMenuView())
+
 
 def setup(client):
     client.add_cog(Troubleshooting(client))

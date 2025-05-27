@@ -14,7 +14,7 @@ class MainMenuView(nextcord.ui.View):
             )
             for key, data in config.TROUBLESHOOTING_GROUPS.items()
         ]
-        select = nextcord.ui.Select(placeholder="Выберите категорию...", options=options)
+        select = nextcord.ui.Select(placeholder="Выберите категорию...", options=options, custom_id="main_menu")
         select.callback = self.select_group_callback
         self.add_item(select)
 
